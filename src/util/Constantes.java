@@ -10,6 +10,7 @@ package util;
  */
 public interface Constantes {
     
+    //Semilla
      static final String CLAVE = "luftwaffepanzer6";
      static final String FACE ="https://www.facebook.com/petbeans";
     
