@@ -179,7 +179,7 @@ public class AltaMascota extends javax.swing.JDialog {
 
         jScrollPane1.setViewportView(jTextArea1);
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Canina", "Felina" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Canina", "Felina", "Roedor", "Bovina", "Equina", "Porcina", "Ave", "Otro" }));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox1ActionPerformed(evt);

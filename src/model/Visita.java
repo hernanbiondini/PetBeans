@@ -17,6 +17,7 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
+import javax.persistence.Transient;
 
 @Entity
 @Table(name = "visita")
@@ -31,6 +32,8 @@ public class Visita implements Cloneable, Serializable {
     private int idVisita;
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date fecha;
+    @Transient
+    private String fechaStr;
     private String temperatura;
     private String fr;
     private String fc;
@@ -55,8 +58,11 @@ public class Visita implements Cloneable, Serializable {
     private String antecedentesTraumatologicos;
     private String desparasitaciones;
     private String ambientales;
+    @Column(length = 1024)
     private String diagnostico;
+    @Column(length = 1024)
     private String tratamiento;
+    @Column(length = 1024)
     private String observaciones;
     private String peso;
     private String tipoPeso;
@@ -353,6 +359,14 @@ public class Visita implements Cloneable, Serializable {
 
     public void setTipoPeso(String tipoPeso) {
         this.tipoPeso = tipoPeso;
+    }
+
+    public String getFechaStr() {
+        return fechaStr;
+    }
+
+    public void setFechaStr(String fechaStr) {
+        this.fechaStr = fechaStr;
     }
 
     @Override

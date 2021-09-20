@@ -1,5 +1,7 @@
 package controller;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
@@ -47,6 +49,17 @@ public class VisitaController extends EntityController{
         Query q = (Query) em.createQuery("SELECT c FROM Visita c WHERE c.mascota.idMascota = ?1");
         q.setParameter(1, id);
         List <Visita> al= q.getResultList();
+        
+        // Recorrer coleccion y setear fecha
+        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");  
+        String strDate = "";   
+        for(Visita v:al){
+            if(v.getFecha()!= null){
+                Date fc = v.getFecha();
+                strDate = formatter.format(fc);   
+                v.setFechaStr(strDate);
+            }           
+        }
         return al;
     }
     

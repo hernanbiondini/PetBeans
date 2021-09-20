@@ -11,6 +11,8 @@
 package view;
 
 import java.awt.Image;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import model.Mascota;
@@ -46,7 +48,13 @@ public class MascotaSola extends javax.swing.JDialog {
             jLabel19.setIcon(Fondo1);
         }
 
-        this.jLabel7.setText(m.getFechaNacimiento().toString());
+        Date fc = m.getFechaNacimiento();  
+        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");  
+        String strDate = formatter.format(fc);   
+        this.jLabel7.setText(strDate);
+        
+        //this.jLabel7.setText(m.getFechaNacimiento().toString());
+        
         this.jLabel9.setText(m.getSeñasParticulares());
         this.jLabel21.setText(m.getPropietario().getNombreDueño());
     }
