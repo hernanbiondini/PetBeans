@@ -32,6 +32,7 @@
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
   </SyntheticProperties>
   <AuxValues>
     <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
@@ -220,19 +221,19 @@
                 <BindingParameter name="NAME" value="Nombre"/>
                 <BindingParameter name="javax.swing.binding.ParameterKeys.EDITABLE" value="false"/>
               </Subbinding>
-              <Subbinding sourcePath="${fechaColocacion}">
+              <Subbinding sourcePath="${fechaColocacionStr}">
                 <BindingParameter name="NAME" value="Fecha coloc."/>
                 <BindingParameter name="javax.swing.binding.ParameterKeys.EDITABLE" value="false"/>
               </Subbinding>
-              <Subbinding sourcePath="${proxColPrimerRef}">
+              <Subbinding sourcePath="${proxColPrimerRefStr}">
                 <BindingParameter name="NAME" value="1&#xba; refuerzo"/>
                 <BindingParameter name="javax.swing.binding.ParameterKeys.EDITABLE" value="false"/>
               </Subbinding>
-              <Subbinding sourcePath="${proxColSegundoRef}">
+              <Subbinding sourcePath="${proxColSegundoRefStr}">
                 <BindingParameter name="NAME" value="2&#xba; refuerzo"/>
                 <BindingParameter name="javax.swing.binding.ParameterKeys.EDITABLE" value="false"/>
               </Subbinding>
-              <Subbinding sourcePath="${proxColTercerRef}">
+              <Subbinding sourcePath="${proxColTercerRefStr}">
                 <BindingParameter name="NAME" value="3&#xba; refuerzo"/>
                 <BindingParameter name="javax.swing.binding.ParameterKeys.EDITABLE" value="false"/>
               </Subbinding>

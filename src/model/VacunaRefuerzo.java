@@ -8,15 +8,16 @@ import javax.persistence.NamedQuery;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
+import javax.persistence.Transient;
 
 @Entity
 @Table(name = "vacunaRefuerzo")
 @NamedQueries({
-    @NamedQuery(name="vacunaRefuerzo.all",query="SELECT vr FROM VacunaRefuerzo vr")
+    @NamedQuery(name = "vacunaRefuerzo.all", query = "SELECT vr FROM VacunaRefuerzo vr")
 })
-@PrimaryKeyJoinColumn(name="idVacunaRefuerzo", referencedColumnName="idVacuna")
+@PrimaryKeyJoinColumn(name = "idVacunaRefuerzo", referencedColumnName = "idVacuna")
 
-public class VacunaRefuerzo extends Vacuna implements Cloneable, Serializable{
+public class VacunaRefuerzo extends Vacuna implements Cloneable, Serializable {
 
     private String primerRefuerzo;
     private String segundoRefuerzo;
@@ -81,6 +82,37 @@ public class VacunaRefuerzo extends Vacuna implements Cloneable, Serializable{
 
     public void setProxColTercerRef(Date proxColTercerRef) {
         this.proxColTercerRef = proxColTercerRef;
+    }
+
+    @Transient
+    private String proxColPrimerRefStr;
+    @Transient
+    private String proxColSegundoRefStr;
+    @Transient
+    private String proxColTercerRefStr;
+
+    public String getProxColPrimerRefStr() {
+        return proxColPrimerRefStr;
+    }
+
+    public void setProxColPrimerRefStr(String proxColPrimerRefStr) {
+        this.proxColPrimerRefStr = proxColPrimerRefStr;
+    }
+
+    public String getProxColSegundoRefStr() {
+        return proxColSegundoRefStr;
+    }
+
+    public void setProxColSegundoRefStr(String proxColSegundoRefStr) {
+        this.proxColSegundoRefStr = proxColSegundoRefStr;
+    }
+
+    public String getProxColTercerRefStr() {
+        return proxColTercerRefStr;
+    }
+
+    public void setProxColTercerRefStr(String proxColTercerRefStr) {
+        this.proxColTercerRefStr = proxColTercerRefStr;
     }
 
 }

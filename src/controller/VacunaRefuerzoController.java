@@ -71,6 +71,32 @@ public class VacunaRefuerzoController extends EntityController {
         Query q = (Query) em.createQuery("SELECT c FROM VacunaRefuerzo c WHERE c.mascota.idMascota = ?1");
         q.setParameter(1, id);
         List <VacunaRefuerzo> al= q.getResultList();
+        
+        // Recorrer coleccion y setear fecha
+        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");  
+        String strDate = "";   
+        for(VacunaRefuerzo v:al){
+            if(v.getFechaColocacion()!= null){
+                Date fc = v.getFechaColocacion();
+                strDate = formatter.format(fc);   
+                v.setFechaColocacionStr(strDate);
+            }
+            if(v.getProxColPrimerRef()!= null){
+                Date fc = v.getProxColPrimerRef();
+                strDate = formatter.format(fc);   
+                v.setProxColPrimerRefStr(strDate);
+            }
+            if(v.getProxColSegundoRef()!= null){
+                Date fc = v.getProxColSegundoRef();
+                strDate = formatter.format(fc);   
+                v.setProxColSegundoRefStr(strDate);
+            }
+            if(v.getProxColTercerRef()!= null){
+                Date fc = v.getProxColTercerRef();
+                strDate = formatter.format(fc);   
+                v.setProxColTercerRefStr(strDate);
+            }
+        }
         return al;
     }
     

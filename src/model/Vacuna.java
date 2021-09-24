@@ -13,6 +13,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
+import javax.persistence.Transient;
 
 
 @Entity
@@ -103,6 +104,15 @@ public class Vacuna implements Cloneable, Serializable {
         return "Vacuna{" + "nombreVacuna=" + nombreVacuna + '}';
     }
 
-    
+    @Transient
+    private String fechaColocacionStr;
+
+    public String getFechaColocacionStr() {
+        return fechaColocacionStr;
+    }
+
+    public void setFechaColocacionStr(String fechaColocacionStr) {
+        this.fechaColocacionStr = fechaColocacionStr;
+    }
 
 }

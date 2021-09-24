@@ -122,16 +122,16 @@ public class ABMVacunas extends javax.swing.JDialog {
         columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${nombreVacuna}"));
         columnBinding.setColumnName("Nombre");
         columnBinding.setEditable(false);
-        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${fechaColocacion}"));
+        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${fechaColocacionStr}"));
         columnBinding.setColumnName("Fecha coloc.");
         columnBinding.setEditable(false);
-        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${proxColPrimerRef}"));
+        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${proxColPrimerRefStr}"));
         columnBinding.setColumnName("1º refuerzo");
         columnBinding.setEditable(false);
-        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${proxColSegundoRef}"));
+        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${proxColSegundoRefStr}"));
         columnBinding.setColumnName("2º refuerzo");
         columnBinding.setEditable(false);
-        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${proxColTercerRef}"));
+        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${proxColTercerRefStr}"));
         columnBinding.setColumnName("3º refuerzo");
         columnBinding.setEditable(false);
         bindingGroup.addBinding(jTableBinding);
@@ -144,12 +144,14 @@ public class ABMVacunas extends javax.swing.JDialog {
             }
         });
         jScrollPane1.setViewportView(jTable1);
-        jTable1.getColumnModel().getColumn(0).setMinWidth(0);
-        jTable1.getColumnModel().getColumn(0).setPreferredWidth(0);
-        jTable1.getColumnModel().getColumn(0).setMaxWidth(0);
-        jTable1.getColumnModel().getColumn(1).setMinWidth(200);
-        jTable1.getColumnModel().getColumn(1).setPreferredWidth(200);
-        jTable1.getColumnModel().getColumn(1).setMaxWidth(200);
+        if (jTable1.getColumnModel().getColumnCount() > 0) {
+            jTable1.getColumnModel().getColumn(0).setMinWidth(0);
+            jTable1.getColumnModel().getColumn(0).setPreferredWidth(0);
+            jTable1.getColumnModel().getColumn(0).setMaxWidth(0);
+            jTable1.getColumnModel().getColumn(1).setMinWidth(200);
+            jTable1.getColumnModel().getColumn(1).setPreferredWidth(200);
+            jTable1.getColumnModel().getColumn(1).setMaxWidth(200);
+        }
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel1.setText("jLabel1");
@@ -187,12 +189,14 @@ public class ABMVacunas extends javax.swing.JDialog {
             }
         });
         jScrollPane2.setViewportView(jTable2);
-        jTable2.getColumnModel().getColumn(0).setMinWidth(0);
-        jTable2.getColumnModel().getColumn(0).setPreferredWidth(0);
-        jTable2.getColumnModel().getColumn(0).setMaxWidth(0);
-        jTable2.getColumnModel().getColumn(1).setMinWidth(200);
-        jTable2.getColumnModel().getColumn(1).setPreferredWidth(200);
-        jTable2.getColumnModel().getColumn(1).setMaxWidth(200);
+        if (jTable2.getColumnModel().getColumnCount() > 0) {
+            jTable2.getColumnModel().getColumn(0).setMinWidth(0);
+            jTable2.getColumnModel().getColumn(0).setPreferredWidth(0);
+            jTable2.getColumnModel().getColumn(0).setMaxWidth(0);
+            jTable2.getColumnModel().getColumn(1).setMinWidth(200);
+            jTable2.getColumnModel().getColumn(1).setPreferredWidth(200);
+            jTable2.getColumnModel().getColumn(1).setMaxWidth(200);
+        }
 
         jLabel2.setText("Vacunas con refuerzo");
 
@@ -497,16 +501,16 @@ private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
         columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${nombreVacuna}"));
         columnBinding.setColumnName("Nombre");
         columnBinding.setEditable(false);
-        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${fechaColocacion}"));
+        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${fechaColocacionStr}"));
         columnBinding.setColumnName("Fecha coloc.");
         columnBinding.setEditable(false);
-        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${proxColPrimerRef}"));
+        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${proxColPrimerRefStr}"));
         columnBinding.setColumnName("1º refuerzo");
         columnBinding.setEditable(false);
-        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${proxColSegundoRef}"));
+        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${proxColSegundoRefStr}"));
         columnBinding.setColumnName("2º refuerzo");
         columnBinding.setEditable(false);
-        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${proxColTercerRef}"));
+        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${proxColTercerRefStr}"));
         columnBinding.setColumnName("3º refuerzo");
         columnBinding.setEditable(false);
         bindingGroup.addBinding(jTableBinding);

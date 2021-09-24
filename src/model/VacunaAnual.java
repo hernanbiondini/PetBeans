@@ -8,6 +8,7 @@ import javax.persistence.NamedQuery;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
+import javax.persistence.Transient;
 
 @Entity
 @Table(name = "vacunaAnual")
@@ -31,4 +32,16 @@ public class VacunaAnual extends Vacuna implements Cloneable, Serializable {
     public void setProximaColocacion(Date proximacolocacion) {
         this.proximaColocacion = proximacolocacion;
     }
+    
+    @Transient
+    private Date proximaColocacionStr;
+
+    public Date getProximaColocacionStr() {
+        return proximaColocacionStr;
+    }
+
+    public void setProximaColocacionStr(Date proximaColocacionStr) {
+        this.proximaColocacionStr = proximaColocacionStr;
+    }
+
 }
