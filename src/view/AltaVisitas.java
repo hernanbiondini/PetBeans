@@ -101,6 +101,7 @@ public class AltaVisitas extends javax.swing.JDialog {
         try {
             initComponents();
             this.jDateChooser1.setDate(v.getFecha());
+            this.jLabel29.setVisible(false);
             this.jComboBox1.setSelectedItem(v.getAspectogeneral());
             this.jComboBox2.setSelectedItem(v.getGangliosLinfaticos());
             this.jComboBox3.setSelectedItem(v.getRespiratorio());
