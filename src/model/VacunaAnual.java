@@ -34,13 +34,13 @@ public class VacunaAnual extends Vacuna implements Cloneable, Serializable {
     }
     
     @Transient
-    private Date proximaColocacionStr;
+    private String proximaColocacionStr;
 
-    public Date getProximaColocacionStr() {
+    public String getProximaColocacionStr() {
         return proximaColocacionStr;
     }
 
-    public void setProximaColocacionStr(Date proximaColocacionStr) {
+    public void setProximaColocacionStr(String proximaColocacionStr) {
         this.proximaColocacionStr = proximaColocacionStr;
     }
 

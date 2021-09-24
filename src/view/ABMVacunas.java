@@ -173,10 +173,10 @@ public class ABMVacunas extends javax.swing.JDialog {
         columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${nombreVacuna}"));
         columnBinding.setColumnName("Nombre");
         columnBinding.setEditable(false);
-        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${fechaColocacion}"));
+        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${fechaColocacionStr}"));
         columnBinding.setColumnName("Fecha coloc.");
         columnBinding.setEditable(false);
-        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${proximaColocacion}"));
+        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${proximaColocacionStr}"));
         columnBinding.setColumnName("Prox. coloc.");
         columnBinding.setEditable(false);
         bindingGroup.addBinding(jTableBinding);
@@ -462,10 +462,10 @@ private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
         columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${nombreVacuna}"));
         columnBinding.setColumnName("Nombre");
         columnBinding.setEditable(false);
-        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${fechaColocacion}"));
+        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${fechaColocacionStr}"));
         columnBinding.setColumnName("Fecha coloc.");
         columnBinding.setEditable(false);
-        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${proximaColocacion}"));
+        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${proximaColocacionStr}"));
         columnBinding.setColumnName("Prox. coloc.");
         columnBinding.setEditable(false);
         bindingGroup.addBinding(jTableBinding);

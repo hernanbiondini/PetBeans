@@ -315,11 +315,11 @@
                 <BindingParameter name="NAME" value="Nombre"/>
                 <BindingParameter name="javax.swing.binding.ParameterKeys.EDITABLE" value="false"/>
               </Subbinding>
-              <Subbinding sourcePath="${fechaColocacion}">
+              <Subbinding sourcePath="${fechaColocacionStr}">
                 <BindingParameter name="NAME" value="Fecha coloc."/>
                 <BindingParameter name="javax.swing.binding.ParameterKeys.EDITABLE" value="false"/>
               </Subbinding>
-              <Subbinding sourcePath="${proximaColocacion}">
+              <Subbinding sourcePath="${proximaColocacionStr}">
                 <BindingParameter name="NAME" value="Prox. coloc."/>
                 <BindingParameter name="javax.swing.binding.ParameterKeys.EDITABLE" value="false"/>
               </Subbinding>

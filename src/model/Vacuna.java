@@ -114,5 +114,5 @@ public class Vacuna implements Cloneable, Serializable {
     public void setFechaColocacionStr(String fechaColocacionStr) {
         this.fechaColocacionStr = fechaColocacionStr;
     }
-
+   
 }

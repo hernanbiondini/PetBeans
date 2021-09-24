@@ -57,6 +57,23 @@ public List<VacunaAnual> getAllVacunaAnualMascota(int id){
         Query q = (Query) em.createQuery("SELECT c FROM VacunaAnual c WHERE c.mascota.idMascota = ?1");
         q.setParameter(1, id);
         List <VacunaAnual> al= q.getResultList();
+        
+        // Recorrer coleccion y setear fecha
+        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");  
+        String strDate = "";   
+        for(VacunaAnual v:al){
+            if(v.getFechaColocacion()!= null){
+                Date fc = v.getFechaColocacion();
+                strDate = formatter.format(fc);   
+                v.setFechaColocacionStr(strDate);
+            }
+            if(v.getProximaColocacion()!= null){
+                Date fc = v.getProximaColocacion();
+                strDate = formatter.format(fc);   
+                v.setProximaColocacionStr(strDate);
+            }
+            
+        }
         return al;
     }
 

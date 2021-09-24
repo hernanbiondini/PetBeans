@@ -3,7 +3,7 @@
  * and open the template in the editor.
  */
 
-/*
+ /*
  * ModificarVacuna.java
  *
  * Created on 13-oct-2011, 4:34:08
@@ -58,7 +58,8 @@ public class ModificarVacuna extends javax.swing.JDialog {
             this.jDateChooser1.setDate(v.getFechaColocacion());
             this.setVacunaAnual1(v);
             this.setTitle("Actualizar");
-
+            this.jLabel4.setVisible(false);
+            this.jLabel11.setVisible(false);
 
         } catch (Exception ex) {
             Logger.getLogger(AltaVisitas.class.getName()).log(Level.SEVERE, null, ex);
