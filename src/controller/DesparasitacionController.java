@@ -57,6 +57,23 @@ public class DesparasitacionController extends EntityController {
         Query q = (Query) em.createQuery("SELECT d FROM Desparasitacion d WHERE d.mascota.idMascota = ?1");
         q.setParameter(1, id);
         List<Desparasitacion> al = q.getResultList();
+        // Recorrer coleccion y setear fecha
+        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");  
+        String strDate = "";   
+        for(Desparasitacion v:al){
+            if(v.getFechaColocacion()!= null){
+                Date fc = v.getFechaColocacion();
+                strDate = formatter.format(fc);   
+                v.setFechaColocacionStr(strDate);
+                System.out.println("strDate: " + strDate);
+            }
+            if(v.getProximaColocacion()!= null){
+                Date fc = v.getProximaColocacion();
+                strDate = formatter.format(fc);   
+                v.setProximaColocacionStr(strDate);
+            }
+            
+        }
         return al;
     }
 

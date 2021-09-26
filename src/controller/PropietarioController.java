@@ -49,7 +49,7 @@ private static PropietarioController propietarioController;
 
     public List<String> getAllPropietarioNombre(){
         EntityManager em = this.getEntityManager();
-        Query q = (Query) em.createQuery("SELECT email FROM Propietario c WHERE email <> ''");
+        Query q = (Query) em.createQuery("SELECT c.email FROM Propietario c WHERE c.email <> ''");
         //Query q = (Query) em.createQuery("SELECT email FROM Propietario c");
         List <String> al= q.getResultList();
         return al;

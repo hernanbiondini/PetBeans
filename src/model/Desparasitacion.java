@@ -14,11 +14,12 @@ import javax.persistence.NamedQuery;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
+import javax.persistence.Transient;
 
 @Entity
 @Table(name = "desparasitacion")
 @NamedQueries({
-    @NamedQuery(name="desparasitacion.all",query = "SELECT d FROM Desparasitacion d")
+    @NamedQuery(name = "desparasitacion.all", query = "SELECT d FROM Desparasitacion d")
 })
 @PrimaryKeyJoinColumn(name = "idDesparasitacion", referencedColumnName = "idDesparasitacion")
 public class Desparasitacion implements Cloneable, Serializable {
@@ -32,12 +33,15 @@ public class Desparasitacion implements Cloneable, Serializable {
     private Date fechaColocacion;
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date proximaColocacion;
-    
-        
+    @Transient
+    private String fechaColocacionStr;
+    @Transient
+    private String proximaColocacionStr;
+
     @JoinColumn(name = "MASCOTA_ID", referencedColumnName = "IDMASCOTA")
     @ManyToOne
     private Mascota mascota;
-    
+
     public Desparasitacion() {
         this.nombreDesparasitante = "";
         this.mascota = new Mascota();
@@ -58,7 +62,7 @@ public class Desparasitacion implements Cloneable, Serializable {
     public void setMascota(Mascota mascota) {
         this.mascota = mascota;
     }
-    
+
     public Date getProximaColocacion() {
         return proximaColocacion;
     }
@@ -81,6 +85,22 @@ public class Desparasitacion implements Cloneable, Serializable {
 
     public void setNombreDesparasitante(String nombreDesparasitante) {
         this.nombreDesparasitante = nombreDesparasitante;
+    }
+
+    public String getFechaColocacionStr() {
+        return fechaColocacionStr;
+    }
+
+    public void setFechaColocacionStr(String fechaColocacionStr) {
+        this.fechaColocacionStr = fechaColocacionStr;
+    }
+
+    public String getProximaColocacionStr() {
+        return proximaColocacionStr;
+    }
+
+    public void setProximaColocacionStr(String proximaColocacionStr) {
+        this.proximaColocacionStr = proximaColocacionStr;
     }
 
     @Override
@@ -109,5 +129,5 @@ public class Desparasitacion implements Cloneable, Serializable {
     public String toString() {
         return "Desparasitacion{" + "nombreDesparasitante=" + nombreDesparasitante + '}';
     }
-   
+
 }
