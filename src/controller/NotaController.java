@@ -39,7 +39,18 @@ public class NotaController extends EntityController {
 
     //Retorna todas las notas anuales
     public List<Nota> getAllNota() {
-        return this.executeNamedQuery(QUERY_GET_ALL_NOTA);
+        List<Nota> al = this.executeNamedQuery(QUERY_GET_ALL_NOTA);
+        // Recorrer coleccion y setear fecha
+        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");  
+        String strDate = "";   
+        for(Nota v:al){      
+            if(v.getFechaNota()!= null){
+                Date fc = v.getFechaNota();
+                strDate = formatter.format(fc);   
+                v.setFechaNotaStr(strDate);
+            } 
+        }
+        return al;
     }
 
 

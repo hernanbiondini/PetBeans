@@ -29,7 +29,7 @@
 			</staticText>
 			<image>
 				<reportElement x="331" y="6" width="199" height="56"/>
-				<imageExpression><![CDATA["C:\\Users\\admin\\Documents\\NetBeansProjects\\TRABAJOS PARA VENDER\\veterinaria 1.0\\Reportes\\leaf_banner_green7.png"]]></imageExpression>
+				<imageExpression><![CDATA["leaf_banner_green7.png"]]></imageExpression>
 			</image>
 		</band>
 	</title>

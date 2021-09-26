@@ -12,11 +12,12 @@ import javax.persistence.NamedQuery;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
+import javax.persistence.Transient;
 
 @Entity
 @Table(name = "nota")
 @NamedQueries({
-    @NamedQuery(name="nota.all",query = "SELECT n FROM Nota n")
+    @NamedQuery(name = "nota.all", query = "SELECT n FROM Nota n")
 })
 @PrimaryKeyJoinColumn(name = "idNota", referencedColumnName = "idNota")
 public class Nota implements Cloneable, Serializable {
@@ -29,6 +30,16 @@ public class Nota implements Cloneable, Serializable {
     private String descripcion;
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date fechaNota;
+    @Transient
+    private String fechaNotaStr;
+
+    public String getFechaNotaStr() {
+        return fechaNotaStr;
+    }
+
+    public void setFechaNotaStr(String fechaNotaStr) {
+        this.fechaNotaStr = fechaNotaStr;
+    }
 
     public Nota() {
         this.titulo = "";
@@ -90,6 +101,5 @@ public class Nota implements Cloneable, Serializable {
     public String toString() {
         return "Notas{" + "titulo=" + titulo + '}';
     }
-   
-    
+
 }

@@ -109,7 +109,7 @@ public class ABMNota extends javax.swing.JDialog {
         columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${titulo}"));
         columnBinding.setColumnName("Titulo");
         columnBinding.setEditable(false);
-        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${fechaNota}"));
+        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${fechaNotaStr}"));
         columnBinding.setColumnName("Fecha");
         columnBinding.setEditable(false);
         columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${descripcion}"));
@@ -125,18 +125,20 @@ public class ABMNota extends javax.swing.JDialog {
             }
         });
         jScrollPane1.setViewportView(jTable1);
-        jTable1.getColumnModel().getColumn(0).setMinWidth(0);
-        jTable1.getColumnModel().getColumn(0).setPreferredWidth(0);
-        jTable1.getColumnModel().getColumn(0).setMaxWidth(0);
-        jTable1.getColumnModel().getColumn(1).setMinWidth(200);
-        jTable1.getColumnModel().getColumn(1).setPreferredWidth(200);
-        jTable1.getColumnModel().getColumn(1).setMaxWidth(200);
-        jTable1.getColumnModel().getColumn(2).setMinWidth(100);
-        jTable1.getColumnModel().getColumn(2).setPreferredWidth(100);
-        jTable1.getColumnModel().getColumn(2).setMaxWidth(100);
-        jTable1.getColumnModel().getColumn(3).setMinWidth(450);
-        jTable1.getColumnModel().getColumn(3).setPreferredWidth(450);
-        jTable1.getColumnModel().getColumn(3).setMaxWidth(450);
+        if (jTable1.getColumnModel().getColumnCount() > 0) {
+            jTable1.getColumnModel().getColumn(0).setMinWidth(0);
+            jTable1.getColumnModel().getColumn(0).setPreferredWidth(0);
+            jTable1.getColumnModel().getColumn(0).setMaxWidth(0);
+            jTable1.getColumnModel().getColumn(1).setMinWidth(200);
+            jTable1.getColumnModel().getColumn(1).setPreferredWidth(200);
+            jTable1.getColumnModel().getColumn(1).setMaxWidth(200);
+            jTable1.getColumnModel().getColumn(2).setMinWidth(100);
+            jTable1.getColumnModel().getColumn(2).setPreferredWidth(100);
+            jTable1.getColumnModel().getColumn(2).setMaxWidth(100);
+            jTable1.getColumnModel().getColumn(3).setMinWidth(450);
+            jTable1.getColumnModel().getColumn(3).setPreferredWidth(450);
+            jTable1.getColumnModel().getColumn(3).setMaxWidth(450);
+        }
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -327,7 +329,7 @@ private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:eve
         columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${titulo}"));
         columnBinding.setColumnName("Titulo");
         columnBinding.setEditable(false);
-        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${fechaNota}"));
+        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${fechaNotaStr}"));
         columnBinding.setColumnName("Fecha");
         columnBinding.setEditable(false);
         columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${descripcion}"));
